@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corupția în România</title>
+  <title>specialii.ro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
       padding: 48px 16px;
     }
     .shell {
-      width: min(980px, 100%);
+      width: min(1000px, 100%);
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
@@ -63,22 +63,19 @@
       color: var(--accent);
       text-transform: uppercase;
     }
-    .chip {
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 6px 12px;
-      border-radius: 14px;
-      font-size: 12px;
-      background: rgba(255,255,255,0.02);
-    }
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 20px;
       align-items: center;
       margin-top: 32px;
       position: relative;
       z-index: 1;
+      padding: 32px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(11,16,33,0.75), rgba(11,16,33,0.55)), url("national_flag.webp") center/cover no-repeat;
     }
     .lead h1 {
       font-size: clamp(32px, 5vw, 44px);
@@ -111,22 +108,8 @@
       box-shadow: 0 10px 30px rgba(96,165,250,0.35);
     }
     .btn:hover { transform: translateY(-2px); border-color: rgba(125,211,252,0.5); box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
-    .foot {
-      margin-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      font-size: 13px;
-      gap: 12px;
-    }
-    @media (max-width: 800px) {
-      body { padding: 28px 14px; }
-      .hero { grid-template-columns: 1fr; }
-      .foot { flex-direction: column; align-items: flex-start; }
-    }
     .specials {
-      margin-top: 40px;
+      margin-top: 36px;
       position: relative;
       z-index: 1;
       display: grid;
@@ -149,6 +132,7 @@
       gap: 12px;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       counter-reset: special;
+      width: 100%;
     }
     .story {
       position: relative;
@@ -176,14 +160,42 @@
       color: var(--text);
       font-weight: 600;
     }
+    .story-text {
+      color: inherit;
+      line-height: 1.45;
+    }
     .story a {
       color: inherit;
       text-decoration: none;
-      display: block;
+      display: inline-flex;
+      margin-top: 8px;
+      width: fit-content;
     }
     .story a:hover { color: var(--accent); }
+    .detail-btn {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      transition: border-color 140ms ease, color 140ms ease, transform 140ms ease;
+    }
+    .story a:hover .detail-btn { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .foot {
+      margin-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      gap: 12px;
+    }
     @media (max-width: 900px) {
-      .story-list { grid-template-columns: 1fr; }
+      body { padding: 28px 14px; }
+      .story-list { grid-template-columns: 1fr; width: 100%; }
+      .story { width: 100%; }
     }
   </style>
 </head>
@@ -191,54 +203,46 @@
   <div class="shell">
     <div class="glow"></div>
     <header>
-      <div class="brand">Corupția în România</div>
-      <div class="chip">Monitorizare cazuri și decizii controversate</div>
+      <div class="brand">"A mai scăpat încă unu'"</div>
     </header>
 
     <section class="hero">
       <div class="lead">
         <h1>Cazuri și decizii care au modelat justiția românească.</h1>
         <p>Actualizăm titluri despre dosare de corupție, prescripții, rejudecări și achitări controversate.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="#specials">Vezi lista</a>
-        </div>
       </div>
     </section>
 
     <section class="specials" id="specials">
-      <div class="section-head">
-        <h2>Specialii din România</h2>
-        <p>O colecție de titluri recente și decizii controversate care au modelat agenda publică.</p>
-      </div>
       <ol class="story-list">
-        <li class="story"><a href="https://stirileprotv.ro/stiri/actualitate/marius-isaila-a-fost-eliberat-de-judecatori-dupa-13-zile-de-arest-fostul-senator-ar-fi-dat-mita-de-un-milion-de-euro-la-mapn.html" target="_blank" rel="noopener noreferrer">Marius Isăilă a fost eliberat de judecători după 13 zile de arest. Fostul senator ar fi dat mită de un milion de euro la MApN</a></li>
-        <li class="story"><a href="https://hotnews.ro/la-8-ani-dupa-ce-doi-bebelusi-au-fost-ucisi-de-infectii-nosocomiale-la-iasi-judecatorii-claseaza-definitiv-procesul-dosarul-a-fost-tergiversat-7-ani-de-parchet-2111773" target="_blank" rel="noopener noreferrer">La 8 ani după ce doi bebeluși au fost uciși de infecții nosocomiale la Iași, judecătorii clasează definitiv dosarul: „Decizia arată că în spitalele noastre se poate muri și nimeni nu răspunde”</a></li>
-        <li class="story"><a href="https://reporteris.ro/exclusiv/anchete/prescrierea-saptamanii-stefan-manolache-scapa-de-acuzatia-de-trafic-de-droguri-dupa-ce-dosarul-a-stat-5-ani-la-diicot-si-3-ani-in-instanta-exclusiv/" target="_blank" rel="noopener noreferrer">Prescrierea săptămânii: Ștefan Manolache scapă de acuzația de trafic de droguri după ce dosarul a stat 5 ani la DIICOT și 3 ani în instanță. EXCLUSIV</a></li>
-        <li class="story"><a href="https://www.g4media.ro/breaking-cumnatul-lui-geoana-si-fostul-ministru-vladescu-eliberati-pe-prescriptie.html" target="_blank" rel="noopener noreferrer">BREAKING Înalta Curte i-a eliberat din penitenciar pe Ionuț Costea, cumnatul lui Mircea Geoană, și fostul ministru de Finanțe Sebastian Vlădescu / Lia Savonea a fost în completul care a luat decizia, pe o procedură extraordinară / Prejudicii totale de 5,6 milioane de euro</a></li>
-        <li class="story"><a href="https://reporteris.ro/exclusiv/anchete/exclusiv-patronul-panifcom-si-fostul-deputat-vizitiu-au-scapat-prin-prescriere-dupa-93-de-termene-la-tribunalul-iasi-intre-2019-si-2025-un-caz-revoltator-cu-15-milioane-de-euro-din-bani-europeni/" target="_blank" rel="noopener noreferrer">EXCLUSIV. Patronul Panifcom și fostul deputat Vizitiu au scăpat prin prescriere după 93 de termene la Tribunalul Iași, între 2019 și 2025. Un caz revoltător cu 1,5 milioane de euro din bani europeni</a></li>
-        <li class="story"><a href="https://www.g4media.ro/surse-doua-judecatoare-de-la-inalta-curte-apropiate-de-lia-savonea-au-inlaturat-alte-3-judecatoare-din-dosarul-fostului-sef-al-fiscului-serban-pop-si-al-omului-de-afaceri-horia-simu-motivul-admite.html" target="_blank" rel="noopener noreferrer">SURSE Două judecătoare de la Înalta Curte apropiate de Lia Savonea au înlăturat alte 3 judecătoare din dosarul fostului șef ANAF Șerban Pop și al afaceristului Horia Simu / Motivul: completul voia să sesizeze Curtea de Justiţie a UE astfel încât faptele să nu fie considerate prescrise </a></li>
-        <li class="story"><a href="https://hotnews.ro/inalta-curte-de-casatie-si-justitie-da-o-noua-decizie-favorabila-unui-condamnat-celebru-remus-truica-la-un-pas-de-revizuirea-condamnarii-de-7-ani-2093531" target="_blank" rel="noopener noreferrer">Înalta Curte de Casație și Justiție dă o nouă decizie favorabilă unui condamnat celebru. Remus Truică, la un pas de revizuirea condamnării de 7 ani</a></li>
-        <li class="story"><a href="https://www.g4media.ro/breaking-inalta-curte-l-a-achitat-pe-fostul-ministru-psd-nicolae-banicioiu-in-dosarul-de-trafic-de-influenta-acesta-scapa-si-de-confiscarea-a-13-milioane-de-lei-decizia-este-definitiva.html" target="_blank" rel="noopener noreferrer">BREAKING Înalta Curte l-a achitat pe fostul ministru PSD Nicolae Bănicioiu în dosarul de trafic de influență. Acesta scapă și de confiscarea a 1,3 milioane de lei / Decizia este definitivă </a></li>
-        <li class="story"><a href="https://www.g4media.ro/exclusiv-asaltul-inculpatilor-spalati-de-justitie-fosti-condamnati-si-inculpati-pentru-coruptie-dau-statul-in-judecata-dupa-ce-au-scapat-de-dosare-ca-urmare-a-deciziilor-ccr-sau-a-unor-sentinte-contr.html" target="_blank" rel="noopener noreferrer">EXCLUSIV Asaltul inculpaților spălați de justiție: Foști condamnați și inculpați pentru corupție dau statul în judecată după ce au scăpat de dosare ca urmare a deciziilor CCR sau a unor sentințe controversate </a></li>
-        <li class="story"><a href="https://www.g4media.ro/breaking-curtea-de-apel-bucuresti-a-ajuns-la-concluzia-ca-fosta-sefa-diicot-alina-bica-si-a-executat-pedeapsa-in-italia-cu-suspendare-si-a-retras-mandatul-european-de-arestare-bica-a-fost-condamnata.html" target="_blank" rel="noopener noreferrer">BREAKING Încă un mare fugar scapă de închisoare: Curtea de apel București a decis că fosta șefă DIICOT Alina Bica și-a executat pedeapsa în Italia cu suspendare și a retras mandatul de arestare / Bica fusese condamnată la 4 ani cu executare, dar nu a făcut nici o zi de închisoare </a></li>
-        <li class="story"><a href="https://www.g4media.ro/fugarul-sebastian-ghita-mai-scapa-de-un-dosar-cazul-taxa-pentru-contracte-it-a-fost-restituit-la-dna-decizia-este-definitiva-fostul-deputat-era-acuzat-ca-a-primit-comisioane-de.html" target="_blank" rel="noopener noreferrer">Fugarul Sebastian Ghiță mai scapă de un dosar / Cazul ”Taxă pentru contracte IT” a fost restituit la DNA / Decizia este definitivă / Fostul deputat era acuzat că a primit comisioane de aproape 6 milioane de euro </a></li>
-        <li class="story"><a href="https://www.g4media.ro/breaking-fostul-sef-al-casei-nationale-de-sanatate-lucian-duta-pus-de-indata-in-libertate-de-inalta-curte-in-cadrul-unei-cai-extraordinare-de-atac-duta-a-fost-condamnat-la-6-ani-de-inchisoare-pent.html" target="_blank" rel="noopener noreferrer">BREAKING Fostul şef al Casei Naţionale de Sănătate, Lucian Duţă, pus de îndată în libertate de Înalta Curte în cadrul unei căi extraordinare de atac / Duţă a fost condamnat la 6 ani de închisoare pentru luare de mită şi se află în penitenciar</a></li>
-        <li class="story"><a href="https://defapt.ro/politica/fosta-judecatoare-bogdan-acuza-procurorul-general-complicitate" target="_blank" rel="noopener noreferrer">Fosta judecătoare Camelia Bogdan îl acuză pe procurorul general de complicitate la "spălarea" lui Dan Voiculescu</a></li>
-        <li class="story"><a href="https://defapt.ro/eveniment/savonea-il-spala-pe-voiculescu" target="_blank" rel="noopener noreferrer">Lia Savonea îl spală pe Dan Voiculescu: judecătoarea Camelia Bogdan l-a condamnat abuziv, dar fapta ei s-a prescris. Antena 3 jubilează</a></li>
-        <li class="story"><a href="https://www.digi24.ro/stiri/actualitate/justitie/curtea-de-apel-bucuresti-a-suspendat-un-dosar-prin-care-un-bolnav-de-cancer-cere-tratamentul-instanta-invoca-protestul-magistratilor-3409369" target="_blank" rel="noopener noreferrer">Curtea de Apel București a suspendat un dosar în care un bolnav de cancer cere tratament, invocând protestul magistraților. Reacția CSM</a></li>
-        <li class="story"><a href="https://romania.europalibera.org/a/parchetele-isi-suspenda-activitatea/33515667.html" target="_blank" rel="noopener noreferrer">CSM: Cele mai multe parchete din țară își suspendă activitatea, cu excepția urgențelor</a></li>
-        <li class="story"><a href="https://www.g4media.ro/motivare-dimensiunea-dezastrului-din-dosarul-nordis-judecatoarea-a-ridicat-sechestre-care-insumeaza-aproape-90-de-milioane-de-euro-cum-a-motivat-judecatoarea-controversele-din-jurul-deciziei.html" target="_blank" rel="noopener noreferrer">MOTIVARE Dimensiunea dezastrului din dosarul Nordis: judecătoarea a ridicat sechestre care însumează aproape 90 de milioane de euro / Cum a motivat magistratul / Controversele din jurul deciziei: ”Motivarea este halucinantă”, ”A reinventat dreptul”</a></li>
-        <li class="story"><a href="https://www.presshub.ro/adrian-sarbu-scapat-pe-procedura-de-ce-a-fost-intors-la-parchet-pentru-a-doua-oara-dosarul-de-evaziune-fiscala-387002" target="_blank" rel="noopener noreferrer">Adrian Sârbu, scăpat pe procedură. De ce a fost întors la Parchet, pentru a doua oară, dosarul de evaziune fiscală</a></li>
-        <li class="story"><a href="https://www.libertatea.ro/stiri/barbat-condamnat-la-doar-2-ani-cu-suspendare-si-2-000-de-euro-daune-morale-dupa-ce-abuzat-o-sexual-pe-minora-pe-care-o-avea-in-plasament-motivarea-instantei-tinuta-la-secret-5426566" target="_blank" rel="noopener noreferrer">Bărbat condamnat la doar 2 ani cu suspendare și 2.000 de euro daune morale, după ce a abuzat-o sexual pe minora pe care o avea în plasament. Motivarea instanței, ținută la secret</a></li>
-        <li class="story"><a href="https://www.g4media.ro/video-dani-mocanu-a-scapat-de-acuzatiile-de-proxenetism-spalare-de-bani-si-grup-infractional-organizat-in-baza-deciziei-ccr-privind-prescriptia-in-prima-instanta-manelistul-fusese-condamnat-la-6-a.html" target="_blank" rel="noopener noreferrer">Dani Mocanu a scăpat de acuzațiile de proxenetism, spălare de bani și grup infracțional organizat în baza deciziei CCR privind prescripția / În primă instanță, manelistul fusese condamnat la 6 ani și 5 luni de închisoare</a></li>
-        <li class="story"><a href="https://www.presshub.ro/cine-sunt-judecatoarele-care-au-decis-rejudecarea-dosarului-secureanu-medicul-spagar-condamnat-pe-fond-la-11-ani-inchisoare-384292/" target="_blank" rel="noopener noreferrer">Cine sunt magistrații care au decis rejudecarea lui Secureanu, medicul șpăgar condamnat pe fond la 11 ani închisoare</a></li>
-        <li class="story"><a href="https://www.g4media.ro/exclusiv-dosarul-condamnatului-maricel-pacuraru-patronul-realitatea-tv-s-ar-putea-rejudeca-dupa-9-ani-de-procese-completul-a-ramas-fara-magistrat-dupa-ce-judecatoarea-a-fost-promovata-la-curtea-de.html" target="_blank" rel="noopener noreferrer">Dosarul condamnatului Maricel Păcuraru, patronul Realitatea TV, s-ar putea rejudeca după 9 ani de procese / Completul a rămas fără magistrat după ce judecătoarea a fost promovată / Experți: faptele sunt prescrise din 2019 </a></li>
-        <li class="story"><a href="https://www.libertatea.ro/stiri/horia-simu-si-serban-pop-au-scapat-de-pedepsele-de-cate-4-ani-de-puscarie-dosarul-lor-s-a-rejudecat-pana-cand-magistratii-au-conchis-ca-faptele-nu-exista-5259002" target="_blank" rel="noopener noreferrer">Horia Simu și Șerban Pop au scăpat de pedepsele de câte 4 ani de pușcărie. Dosarul lor s-a rejudecat până când magistrații au conchis că „faptele nu există”</a></li>
-        <li class="story"><a href="https://www.libertatea.ro/stiri/motivul-achitare-definitiva-marian-vanghelie-dosarul-luare-mita-5239315" target="_blank" rel="noopener noreferrer">Motivul pentru care Marian Vanghelie a fost achitat definitiv în dosarul în care era acuzat de o șpagă de 30.000.000 de euro</a></li>
-        <li class="story"><a href="https://www.g4media.ro/motivare-de-ce-fostul-primar-psd-al-sectorului-1-daniel-tudorache-a-fost-condamnat-cu-suspendare-si-de-ce-instanta-nu-i-a-confiscat-diamantele-si-bijuteriile-de-2-milioane-de-euro.html" target="_blank" rel="noopener noreferrer">MOTIVARE De ce fostul primar PSD al Sectorului 1 Daniel Tudorache a fost condamnat cu suspendare şi de ce instanţa nu i-a confiscat diamantele şi bijuteriile de 2 milioane de euro</a></li>
-        <li class="story"><a href="https://www.g4media.ro/exclusiv-magnatul-puiu-popoviciu-a-fost-achitat-in-dosarul-baneasa-in-are-fusese-condamnat-initial-la-7-ani-de-inchisoare-decizia-este-definitiva.html" target="_blank" rel="noopener noreferrer">EXCLUSIV Magnatul Puiu Popoviciu a fost achitat în dosarul Băneasa, în care fusese condamnat inițial la 7 ani de închisoare / Decizia este definitivă</a></li>
-        <li class="story"><a href="https://www.g4media.ro/motivare-inalta-curte-fostul-ministru-psd-nicolae-banicioiu-a-comis-infractiunea-de-trafic-de-influenta-dar-a-intervenit-prescriptia-ca-urmare-a-deciziilor-ccr-instanta-a-dispus-confiscarea-a-13.html" target="_blank" rel="noopener noreferrer">MOTIVARE Înalta Curte: Fostul ministru PSD Nicolae Bănicioiu a comis infracţiunea de trafic de influenţă, dar a intervenit prescripţia ca urmare a deciziilor CCR / Instanţa a dispus confiscarea a 1,3 milioane de lei / Bănicioiu a fost achitat pentru luare de mită, însă o judecătoare a vrut să-l condamne</a></li>
-        <li class="story"><a href="https://www.g4media.ro/inalta-curte-a-decis-achitarea-fostului-premier-calin-popescu-tariceanu-in-procesul-in-care-e-acuzat-de-o-mita-de-800-000-de-dolari-decizia-nu-e-definitiva.html" target="_blank" rel="noopener noreferrer">Înalta Curte a decis achitarea fostului premier Călin Popescu Tăriceanu în procesul în care e acuzat de o mită de 800.000 de dolari / Decizia nu e definitivă</a></li>
+        <li class="story"><div class="story-text">Marius Isăilă a fost eliberat de judecători după 13 zile de arest. Fostul senator ar fi dat mită de un milion de euro la MApN</div><a class="detail-btn" href="https://stirileprotv.ro/stiri/actualitate/marius-isaila-a-fost-eliberat-de-judecatori-dupa-13-zile-de-arest-fostul-senator-ar-fi-dat-mita-de-un-milion-de-euro-la-mapn.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">La 8 ani după ce doi bebeluși au fost uciși de infecții nosocomiale la Iași, judecătorii clasează definitiv dosarul: „Decizia arată că în spitalele noastre se poate muri și nimeni nu răspunde”</div><a class="detail-btn" href="https://hotnews.ro/la-8-ani-dupa-ce-doi-bebelusi-au-fost-ucisi-de-infectii-nosocomiale-la-iasi-judecatorii-claseaza-definitiv-procesul-dosarul-a-fost-tergiversat-7-ani-de-parchet-2111773" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Prescrierea săptămânii: Ștefan Manolache scapă de acuzația de trafic de droguri după ce dosarul a stat 5 ani la DIICOT și 3 ani în instanță. EXCLUSIV</div><a class="detail-btn" href="https://reporteris.ro/exclusiv/anchete/prescrierea-saptamanii-stefan-manolache-scapa-de-acuzatia-de-trafic-de-droguri-dupa-ce-dosarul-a-stat-5-ani-la-diicot-si-3-ani-in-instanta-exclusiv/" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">BREAKING Înalta Curte i-a eliberat din penitenciar pe Ionuț Costea, cumnatul lui Mircea Geoană, și fostul ministru de Finanțe Sebastian Vlădescu / Lia Savonea a fost în completul care a luat decizia, pe o procedură extraordinară / Prejudicii totale de 5,6 milioane de euro</div><a class="detail-btn" href="https://www.g4media.ro/breaking-cumnatul-lui-geoana-si-fostul-ministru-vladescu-eliberati-pe-prescriptie.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">EXCLUSIV. Patronul Panifcom și fostul deputat Vizitiu au scăpat prin prescriere după 93 de termene la Tribunalul Iași, între 2019 și 2025. Un caz revoltător cu 1,5 milioane de euro din bani europeni</div><a class="detail-btn" href="https://reporteris.ro/exclusiv/anchete/exclusiv-patronul-panifcom-si-fostul-deputat-vizitiu-au-scapat-prin-prescriere-dupa-93-de-termene-la-tribunalul-iasi-intre-2019-si-2025-un-caz-revoltator-cu-15-milioane-de-euro-din-bani-europeni/" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">SURSE Două judecătoare de la Înalta Curte apropiate de Lia Savonea au înlăturat alte 3 judecătoare din dosarul fostului șef ANAF Șerban Pop și al afaceristului Horia Simu / Motivul: completul voia să sesizeze Curtea de Justiţie a UE astfel încât faptele să nu fie considerate prescrise </div><a class="detail-btn" href="https://www.g4media.ro/surse-doua-judecatoare-de-la-inalta-curte-apropiate-de-lia-savonea-au-inlaturat-alte-3-judecatoare-din-dosarul-fostului-sef-al-fiscului-serban-pop-si-al-omului-de-afaceri-horia-simu-motivul-admite.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Înalta Curte de Casație și Justiție dă o nouă decizie favorabilă unui condamnat celebru. Remus Truică, la un pas de revizuirea condamnării de 7 ani</div><a class="detail-btn" href="https://hotnews.ro/inalta-curte-de-casatie-si-justitie-da-o-noua-decizie-favorabila-unui-condamnat-celebru-remus-truica-la-un-pas-de-revizuirea-condamnarii-de-7-ani-2093531" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">BREAKING Înalta Curte l-a achitat pe fostul ministru PSD Nicolae Bănicioiu în dosarul de trafic de influență. Acesta scapă și de confiscarea a 1,3 milioane de lei / Decizia este definitivă </div><a class="detail-btn" href="https://www.g4media.ro/breaking-inalta-curte-l-a-achitat-pe-fostul-ministru-psd-nicolae-banicioiu-in-dosarul-de-trafic-de-influenta-acesta-scapa-si-de-confiscarea-a-13-milioane-de-lei-decizia-este-definitiva.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">EXCLUSIV Asaltul inculpaților spălați de justiție: Foști condamnați și inculpați pentru corupție dau statul în judecată după ce au scăpat de dosare ca urmare a deciziilor CCR sau a unor sentințe controversate </div><a class="detail-btn" href="https://www.g4media.ro/exclusiv-asaltul-inculpatilor-spalati-de-justitie-fosti-condamnati-si-inculpati-pentru-coruptie-dau-statul-in-judecata-dupa-ce-au-scapat-de-dosare-ca-urmare-a-deciziilor-ccr-sau-a-unor-sentinte-contr.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">BREAKING Încă un mare fugar scapă de închisoare: Curtea de apel București a decis că fosta șefă DIICOT Alina Bica și-a executat pedeapsa în Italia cu suspendare și a retras mandatul de arestare / Bica fusese condamnată la 4 ani cu executare, dar nu a făcut nici o zi de închisoare </div><a class="detail-btn" href="https://www.g4media.ro/breaking-curtea-de-apel-bucuresti-a-ajuns-la-concluzia-ca-fosta-sefa-diicot-alina-bica-si-a-executat-pedeapsa-in-italia-cu-suspendare-si-a-retras-mandatul-european-de-arestare-bica-a-fost-condamnata.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Fugarul Sebastian Ghiță mai scapă de un dosar / Cazul ”Taxă pentru contracte IT” a fost restituit la DNA / Decizia este definitivă / Fostul deputat era acuzat că a primit comisioane de aproape 6 milioane de euro </div><a class="detail-btn" href="https://www.g4media.ro/fugarul-sebastian-ghita-mai-scapa-de-un-dosar-cazul-taxa-pentru-contracte-it-a-fost-restituit-la-dna-decizia-este-definitiva-fostul-deputat-era-acuzat-ca-a-primit-comisioane-de.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">BREAKING Fostul şef al Casei Naţionale de Sănătate, Lucian Duţă, pus de îndată în libertate de Înalta Curte în cadrul unei căi extraordinare de atac / Duţă a fost condamnat la 6 ani de închisoare pentru luare de mită şi se află în penitenciar</div><a class="detail-btn" href="https://www.g4media.ro/breaking-fostul-sef-al-casei-nationale-de-sanatate-lucian-duta-pus-de-indata-in-libertate-de-inalta-curte-in-cadrul-unei-cai-extraordinare-de-atac-duta-a-fost-condamnat-la-6-ani-de-inchisoare-pent.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Fosta judecătoare Camelia Bogdan îl acuză pe procurorul general de complicitate la "spălarea" lui Dan Voiculescu</div><a class="detail-btn" href="https://defapt.ro/politica/fosta-judecatoare-bogdan-acuza-procurorul-general-complicitate" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Lia Savonea îl spală pe Dan Voiculescu: judecătoarea Camelia Bogdan l-a condamnat abuziv, dar fapta ei s-a prescris. Antena 3 jubilează</div><a class="detail-btn" href="https://defapt.ro/eveniment/savonea-il-spala-pe-voiculescu" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Curtea de Apel București a suspendat un dosar în care un bolnav de cancer cere tratament, invocând protestul magistraților. Reacția CSM</div><a class="detail-btn" href="https://www.digi24.ro/stiri/actualitate/justitie/curtea-de-apel-bucuresti-a-suspendat-un-dosar-prin-care-un-bolnav-de-cancer-cere-tratamentul-instanta-invoca-protestul-magistratilor-3409369" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">CSM: Cele mai multe parchete din țară își suspendă activitatea, cu excepția urgențelor</div><a class="detail-btn" href="https://romania.europalibera.org/a/parchetele-isi-suspenda-activitatea/33515667.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">MOTIVARE Dimensiunea dezastrului din dosarul Nordis: judecătoarea a ridicat sechestre care însumează aproape 90 de milioane de euro / Cum a motivat magistratul / Controversele din jurul deciziei: ”Motivarea este halucinantă”, ”A reinventat dreptul”</div><a class="detail-btn" href="https://www.g4media.ro/motivare-dimensiunea-dezastrului-din-dosarul-nordis-judecatoarea-a-ridicat-sechestre-care-insumeaza-aproape-90-de-milioane-de-euro-cum-a-motivat-judecatoarea-controversele-din-jurul-deciziei.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Adrian Sârbu, scăpat pe procedură. De ce a fost întors la Parchet, pentru a doua oară, dosarul de evaziune fiscală</div><a class="detail-btn" href="https://www.presshub.ro/adrian-sarbu-scapat-pe-procedura-de-ce-a-fost-intors-la-parchet-pentru-a-doua-oara-dosarul-de-evaziune-fiscala-387002" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Bărbat condamnat la doar 2 ani cu suspendare și 2.000 de euro daune morale, după ce a abuzat-o sexual pe minora pe care o avea în plasament. Motivarea instanței, ținută la secret</div><a class="detail-btn" href="https://www.libertatea.ro/stiri/barbat-condamnat-la-doar-2-ani-cu-suspendare-si-2-000-de-euro-daune-morale-dupa-ce-abuzat-o-sexual-pe-minora-pe-care-o-avea-in-plasament-motivarea-instantei-tinuta-la-secret-5426566" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Dani Mocanu a scăpat de acuzațiile de proxenetism, spălare de bani și grup infracțional organizat în baza deciziei CCR privind prescripția / În primă instanță, manelistul fusese condamnat la 6 ani și 5 luni de închisoare</div><a class="detail-btn" href="https://www.g4media.ro/video-dani-mocanu-a-scapat-de-acuzatiile-de-proxenetism-spalare-de-bani-si-grup-infractional-organizat-in-baza-deciziei-ccr-privind-prescriptia-in-prima-instanta-manelistul-fusese-condamnat-la-6-a.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Cine sunt magistrații care au decis rejudecarea lui Secureanu, medicul șpăgar condamnat pe fond la 11 ani închisoare</div><a class="detail-btn" href="https://www.presshub.ro/cine-sunt-judecatoarele-care-au-decis-rejudecarea-dosarului-secureanu-medicul-spagar-condamnat-pe-fond-la-11-ani-inchisoare-384292/" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Dosarul condamnatului Maricel Păcuraru, patronul Realitatea TV, s-ar putea rejudeca după 9 ani de procese / Completul a rămas fără magistrat după ce judecătoarea a fost promovată / Experți: faptele sunt prescrise din 2019 </div><a class="detail-btn" href="https://www.g4media.ro/exclusiv-dosarul-condamnatului-maricel-pacuraru-patronul-realitatea-tv-s-ar-putea-rejudeca-dupa-9-ani-de-procese-completul-a-ramas-fara-magistrat-dupa-ce-judecatoarea-a-fost-promovata-la-curtea-de.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Horia Simu și Șerban Pop au scăpat de pedepsele de câte 4 ani de pușcărie. Dosarul lor s-a rejudecat până când magistrații au conchis că „faptele nu există”</div><a class="detail-btn" href="https://www.libertatea.ro/stiri/horia-simu-si-serban-pop-au-scapat-de-pedepsele-de-cate-4-ani-de-puscarie-dosarul-lor-s-a-rejudecat-pana-cand-magistratii-au-conchis-ca-faptele-nu-exista-5259002" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Motivul pentru care Marian Vanghelie a fost achitat definitiv în dosarul în care era acuzat de o șpagă de 30.000.000 de euro</div><a class="detail-btn" href="https://www.libertatea.ro/stiri/motivul-achitare-definitiva-marian-vanghelie-dosarul-luare-mita-5239315" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">MOTIVARE De ce fostul primar PSD al Sectorului 1 Daniel Tudorache a fost condamnat cu suspendare şi de ce instanţa nu i-a confiscat diamantele şi bijuteriile de 2 milioane de euro</div><a class="detail-btn" href="https://www.g4media.ro/motivare-de-ce-fostul-primar-psd-al-sectorului-1-daniel-tudorache-a-fost-condamnat-cu-suspendare-si-de-ce-instanta-nu-i-a-confiscat-diamantele-si-bijuteriile-de-2-milioane-de-euro.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">EXCLUSIV Magnatul Puiu Popoviciu a fost achitat în dosarul Băneasa, în care fusese condamnat inițial la 7 ani de închisoare / Decizia este definitivă</div><a class="detail-btn" href="https://www.g4media.ro/exclusiv-magnatul-puiu-popoviciu-a-fost-achitat-in-dosarul-baneasa-in-are-fusese-condamnat-initial-la-7-ani-de-inchisoare-decizia-este-definitiva.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">MOTIVARE Înalta Curte: Fostul ministru PSD Nicolae Bănicioiu a comis infracţiunea de trafic de influenţă, dar a intervenit prescripţia ca urmare a deciziilor CCR / Instanţa a dispus confiscarea a 1,3 milioane de lei / Bănicioiu a fost achitat pentru luare de mită, însă o judecătoare a vrut să-l condamne</div><a class="detail-btn" href="https://www.g4media.ro/motivare-inalta-curte-fostul-ministru-psd-nicolae-banicioiu-a-comis-infractiunea-de-trafic-de-influenta-dar-a-intervenit-prescriptia-ca-urmare-a-deciziilor-ccr-instanta-a-dispus-confiscarea-a-13.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
+        <li class="story"><div class="story-text">Înalta Curte a decis achitarea fostului premier Călin Popescu Tăriceanu în procesul în care e acuzat de o mită de 800.000 de dolari / Decizia nu e definitivă</div><a class="detail-btn" href="https://www.g4media.ro/inalta-curte-a-decis-achitarea-fostului-premier-calin-popescu-tariceanu-in-procesul-in-care-e-acuzat-de-o-mita-de-800-000-de-dolari-decizia-nu-e-definitiva.html" target="_blank" rel="noopener noreferrer">Vezi detalii</a></li>
       </ol>
     </section>
 
