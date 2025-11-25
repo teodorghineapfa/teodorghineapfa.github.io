@@ -147,14 +147,68 @@
       .hero { grid-template-columns: 1fr; }
       .foot { flex-direction: column; align-items: flex-start; }
     }
+    .specials {
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 14px;
+    }
+    .section-head {
+      display: grid;
+      gap: 6px;
+    }
+    .section-head h2 {
+      font-size: 22px;
+      letter-spacing: 0.3px;
+    }
+    .section-head p { color: var(--muted); }
+    .story-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      counter-reset: special;
+    }
+    .story {
+      position: relative;
+      padding: 12px 14px 12px 46px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      line-height: 1.45;
+      color: var(--text);
+    }
+    .story::before {
+      counter-increment: special;
+      content: counter(special);
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      background: rgba(125,211,252,0.18);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 600;
+    }
+    @media (max-width: 900px) {
+      .story-list { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <div class="shell">
     <div class="glow"></div>
     <header>
-      <div class="brand">Teodor Ghinea PFA</div>
-      <div class="chip">Building reliable digital experiences</div>
+      <div class="brand">Sample Studio</div>
+      <div class="chip">Modern web template preview</div>
     </header>
 
     <section class="hero">
@@ -162,8 +216,8 @@
         <h1>Practical web solutions with a human touch.</h1>
         <p>I craft performant websites, landing pages, and small business portals that keep users engaged and teams moving fast.</p>
         <div class="cta-row">
-          <a class="btn primary" href="mailto:contact@teodorghinea.ro">Start a project</a>
-          <a class="btn" href="https://github.com/teodorghineapfa">View GitHub</a>
+          <a class="btn primary" href="#">Start a project</a>
+          <a class="btn" href="#">See template</a>
         </div>
         <div class="pill-row">
           <div class="pill">Responsive by default</div>
@@ -182,12 +236,49 @@
       </div>
     </section>
 
+    <section class="specials">
+      <div class="section-head">
+        <h2>Specialii din România</h2>
+        <p>O colecție de titluri recente și decizii controversate care au modelat agenda publică.</p>
+      </div>
+      <ol class="story-list">
+        <li class="story">Marius Isăilă a fost eliberat de judecători după 13 zile de arest. Fostul senator ar fi dat mită de un milion de euro la MApN</li>
+        <li class="story">La 8 ani după ce doi bebeluși au fost uciși de infecții nosocomiale la Iași, judecătorii clasează definitiv dosarul: „Decizia arată că în spitalele noastre se poate muri și nimeni nu răspunde”</li>
+        <li class="story">Prescrierea săptămânii: Ștefan Manolache scapă de acuzația de trafic de droguri după ce dosarul a stat 5 ani la DIICOT și 3 ani în instanță. EXCLUSIV</li>
+        <li class="story">BREAKING Înalta Curte i-a eliberat din penitenciar pe Ionuț Costea, cumnatul lui Mircea Geoană, și fostul ministru de Finanțe Sebastian Vlădescu / Lia Savonea a fost în completul care a luat decizia, pe o procedură extraordinară / Prejudicii totale de 5,6 milioane de euro</li>
+        <li class="story">EXCLUSIV. Patronul Panifcom și fostul deputat Vizitiu au scăpat prin prescriere după 93 de termene la Tribunalul Iași, între 2019 și 2025. Un caz revoltător cu 1,5 milioane de euro din bani europeni</li>
+        <li class="story">SURSE Două judecătoare de la Înalta Curte apropiate de Lia Savonea au înlăturat alte 3 judecătoare din dosarul fostului șef ANAF Șerban Pop și al afaceristului Horia Simu / Motivul: completul voia să sesizeze Curtea de Justiţie a UE astfel încât faptele să nu fie considerate prescrise</li>
+        <li class="story">Înalta Curte de Casație și Justiție dă o nouă decizie favorabilă unui condamnat celebru. Remus Truică, la un pas de revizuirea condamnării de 7 ani</li>
+        <li class="story">BREAKING Înalta Curte l-a achitat pe fostul ministru PSD Nicolae Bănicioiu în dosarul de trafic de influență. Acesta scapă și de confiscarea a 1,3 milioane de lei / Decizia este definitivă</li>
+        <li class="story">EXCLUSIV Asaltul inculpaților spălați de justiție: Foști condamnați și inculpați pentru corupție dau statul în judecată după ce au scăpat de dosare ca urmare a deciziilor CCR sau a unor sentințe controversate</li>
+        <li class="story">BREAKING Încă un mare fugar scapă de închisoare: Curtea de apel București a decis că fosta șefă DIICOT Alina Bica și-a executat pedeapsa în Italia cu suspendare și a retras mandatul de arestare / Bica fusese condamnată la 4 ani cu executare, dar nu a făcut nici o zi de închisoare</li>
+        <li class="story">Fugarul Sebastian Ghiță mai scapă de un dosar / Cazul ”Taxă pentru contracte IT” a fost restituit la DNA / Decizia este definitivă / Fostul deputat era acuzat că a primit comisioane de aproape 6 milioane de euro</li>
+        <li class="story">BREAKING Fostul şef al Casei Naţionale de Sănătate, Lucian Duţă, pus de îndată în libertate de Înalta Curte în cadrul unei căi extraordinare de atac / Duţă a fost condamnat la 6 ani de închisoare pentru luare de mită şi se află în penitenciar</li>
+        <li class="story">Fosta judecătoare Camelia Bogdan îl acuză pe procurorul general de complicitate la "spălarea" lui Dan Voiculescu</li>
+        <li class="story">Lia Savonea îl spală pe Dan Voiculescu: judecătoarea Camelia Bogdan l-a condamnat abuziv, dar fapta ei s-a prescris. Antena 3 jubilează</li>
+        <li class="story">Curtea de Apel București a suspendat un dosar în care un bolnav de cancer cere tratament, invocând protestul magistraților. Reacția CSM</li>
+        <li class="story">CSM: Cele mai multe parchete din țară își suspendă activitatea, cu excepția urgențelor</li>
+        <li class="story">MOTIVARE Dimensiunea dezastrului din dosarul Nordis: judecătoarea a ridicat sechestre care însumează aproape 90 de milioane de euro / Cum a motivat magistratul / Controversele din jurul deciziei: ”Motivarea este halucinantă”, ”A reinventat dreptul”</li>
+        <li class="story">Adrian Sârbu, scăpat pe procedură. De ce a fost întors la Parchet, pentru a doua oară, dosarul de evaziune fiscală</li>
+        <li class="story">Bărbat condamnat la doar 2 ani cu suspendare și 2.000 de euro daune morale, după ce a abuzat-o sexual pe minora pe care o avea în plasament. Motivarea instanței, ținută la secret</li>
+        <li class="story">Dani Mocanu a scăpat de acuzațiile de proxenetism, spălare de bani și grup infracțional organizat în baza deciziei CCR privind prescripția / În primă instanță, manelistul fusese condamnat la 6 ani și 5 luni de închisoare</li>
+        <li class="story">Cine sunt magistrații care au decis rejudecarea lui Secureanu, medicul șpăgar condamnat pe fond la 11 ani închisoare</li>
+        <li class="story">Dosarul condamnatului Maricel Păcuraru, patronul Realitatea TV, s-ar putea rejudeca după 9 ani de procese / Completul a rămas fără magistrat după ce judecătoarea a fost promovată / Experți: faptele sunt prescrise din 2019</li>
+        <li class="story">Horia Simu și Șerban Pop au scăpat de pedepsele de câte 4 ani de pușcărie. Dosarul lor s-a rejudecat până când magistrații au conchis că „faptele nu există”</li>
+        <li class="story">Motivul pentru care Marian Vanghelie a fost achitat definitiv în dosarul în care era acuzat de o șpagă de 30.000.000 de euro</li>
+        <li class="story">MOTIVARE De ce fostul primar PSD al Sectorului 1 Daniel Tudorache a fost condamnat cu suspendare şi de ce instanţa nu i-a confiscat diamantele şi bijuteriile de 2 milioane de euro</li>
+        <li class="story">Magnatul Puiu Popoviciu a fost achitat în dosarul Băneasa, în care fusese condamnat inițial la 7 ani de închisoare / Decizia este definitivă</li>
+        <li class="story">MOTIVARE Înalta Curte: Fostul ministru PSD Nicolae Bănicioiu a comis infracţiunea de trafic de influenţă, dar a intervenit prescripţia ca urmare a deciziilor CCR / Instanţa a dispus confiscarea a 1,3 milioane de lei / Bănicioiu a fost achitat pentru luare de mită, însă o judecătoare a vrut să-l condamne</li>
+        <li class="story">Înalta Curte a decis achitarea fostului premier Călin Popescu Tăriceanu în procesul în care e acuzat de o mită de 800.000 de dolari / Decizia nu e definitivă</li>
+      </ol>
+    </section>
+
     <div class="foot">
-      <span>Based in RO - Available for short engagements.</span>
+      <span>Demo content only.</span>
       <div class="links">
-        <a href="mailto:contact@teodorghinea.ro">Email</a>
-        <a href="https://www.linkedin.com">LinkedIn</a>
-        <a href="https://github.com/teodorghineapfa">GitHub</a>
+        <a href="#">Contact</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Docs</a>
       </div>
     </div>
   </div>
